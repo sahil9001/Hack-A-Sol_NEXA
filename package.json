@@ -1,0 +1,22 @@
+{
+  "name": "nexa-vaxu",
+  "version": "1.0.0",
+  "description": "The Covid19 pandemic has taken over the entire world. It has caused millions of deaths and socio economic loss. After months of combined efforts, our scientists have finally developed vaccines against the virus.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prakhar-asaiya/NEXA-VaxU.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prakhar-asaiya/NEXA-VaxU/issues"
+  },
+  "homepage": "https://github.com/prakhar-asaiya/NEXA-VaxU#readme",
+  "dependencies": {
+    "tsparticles": "^1.18.12"
+  }
+}
