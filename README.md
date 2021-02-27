@@ -95,8 +95,8 @@ All the team members are from National Institute of Technology pursuing Computer
 
 > | S.No. |       Name       |       Work Field   |           Github Account           |
 > | ----- | :--------------: | :----------------: | :--------------------------------: |
-> | 2     |  Prakhar Asaiya  | Web-Frontend       | https://github.com/prakhar-asaiya/ |
-> | 3     | Amitesh Agrawal  | Web-Backend + ML-AI developer | https://github.com/amiteshag320/   |
-> | 4     | Siddharth Mishra | Mobile Aplication Developer |  https://github.com/Hard-Coder05|
+> | 1     |  Prakhar Asaiya  | Web-Frontend       | https://github.com/prakhar-asaiya/ |
+> | 2     | Amitesh Agrawal  | Web-Backend + ML-AI developer | https://github.com/amiteshag320/   |
+> | 3     | Siddharth Mishra | Mobile Aplication Developer |  https://github.com/Hard-Coder05|
 
 ---
