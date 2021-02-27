@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles/toastr.min.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="styles/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://use.fontawesome.com/36f44874b6.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"
+    ></script>
+    <script>
+      var exists = localStorage.length;
+      if (!exists) {
+        alert("You need to login first!");
+        // Hard-Coder05.github.io/NEXA-VaxU
+        var host = "localhost:5500";
+        window.location.href = "http://" + host;
+      }
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <nav
+      class="navbar is-fixed-top signal-navbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="container">
+        <div class="navbar-brand">
+          <a>
+            <img class="signal-logo" src="assets/logo/Sanjeevani/1.png" />
+          </a>
+            <img class="signal-logo" src="assets/logo/Sanjeevani/3.png" />
+          <a>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <p id="welcome">Welcome</p>
+              &nbsp;
+              <p id="user_name"></p>
+            </div>
+            <div class="navbar-item">
+              <div class="buttons">
+                <button class="button is-danger" onclick="logout()">
+                  Log Out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="first-three">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="assets/img/undraw_medical_care_movn.svg"
+                    alt="vaccine_image"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media-content">
+                  <p class="title is-4">Number of Blood Units left:</p>
+                  <h2 id="vaccinesLeft"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="assets/img/undraw_personal_finance_tqcd.svg" alt="vaccine_image" />
+                  <!-- https://bulma.io/images/placeholders/1280x960.png-->
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media-content">
+                  <p class="title is-4">Cost per Blood Unit:</p>
+                  <h2 id="priceOfVaccine"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="assets/img/undraw_Building_re_xfcm.svg" alt="vaccine_image" />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media-content">
+                  <p class="title is-4">Status:</p>
+                  <h2 id="availabilityStatus"></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section listAndImage">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-two-fifths">
+            <div class="card">
+              <div class="card-content">
+                <div class="media-content">
+                  <p class="title is-4 has-text-centered">Patient List :</p>
+                  <table
+                    class="table is-bordered is-striped is-hoverable is-fullwidth"
+                  >
+                    <thead>
+                      <tr>
+                        <th class="has-text-centered">Id</th>
+                        <th class="has-text-centered">Name</th>
+                        <th class="has-text-centered">Timeslot</th>
+                      </tr>
+                    </thead>
+                    <tbody id="getList"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="column"></div>
+            <!-- div for proper spacing -->
+            <div class="column">
+              <p class="subtitle">Enter patient's id :</p>
+              <textarea
+                class="textarea"
+                placeholder="Enter id"
+                cols="10"
+              ></textarea>
+              <div class="buttons is-centered">
+                <button
+                  class="button is-success is-medium mt-4"
+                  onclick="isVaccinated()"
+                  id="vaccinated"
+                >
+                  Submit ID
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="column is-three-fifths">
+            <button
+              type="button"
+              class="button is-primary"
+              id="button1"
+              onclick="startWebcam()"
+              style="margin-left: 50px"
+            >
+              Start the Webcam!
+            </button>
+            <button
+              class="button is-primary"
+              id="button2"
+              onclick="takeSnap()"
+              style="margin-left: 100px"
+            >
+              Take picture!
+            </button>
+            <button
+              class="button is-primary"
+              id="button3"
+              onclick="stopWebcam()"
+              style="margin-left: 100px"
+            >
+              Stop the Webcam!
+            </button>
+            <video
+              id="webcam"
+              autoplay
+              playsinline
+              width="640"
+              height="480"
+              style="
+                margin-left: 65px;
+                margin-top: 50px;
+                border: 1px solid black;
+              "
+            ></video>
+            <canvas
+              id="canvas"
+              class=""
+              style="
+                margin-left: 65px;
+                margin-top: 50px;
+                border: 1px solid black;
+                border: none;
+              "
+            ></canvas>
+            <audio
+              id="snapSound"
+              src="assets/camera-shutter-click-01.wav"
+              preload="auto"
+            ></audio>
+            <div class="column is-offset-4">
+              <a id="download-photo" download="patientImage.png"
+                >Download the image!</a
+              >
+            </div>
+            <!--<div class="file">
+                          <label class="file-label">
+                            <input class="file-input" type="file" name="resume" id="fileUpload">
+                            <span class="file-cta">
+                              <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                              </span>
+                              <span class="file-label">
+                                Choose a file…
+                              </span>
+                              <span class="file-name">
+                                </span>
+                            </span>
+                          </label>
+                        </div>-->
+            <div class="column is-offset-4">
+              <input type="file" id="fileUpload" />
+            </div>
+          </div>
+        </div>
+        <div class="buttons is-centered">
+          <button
+            class="button is-success is-medium"
+            onclick="submitDetails()"
+            id="submit"
+          >
+            Submit Image
+          </button>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-two-fifths is-hidden-mobile">
+            <span class="copyright"> © 2021 Team NEXA </span>
+            <br />
+            <br />
+            <br />
+
+            <span>Team Members: </span>
+            <br />
+            <span>Sahil Silare (2nd year CSE)</span>
+            <br />
+            <span>Prakhar Asaiya (2nd year CSE)</span>
+            <br />
+            <span>Siddharth Mishra (2nd year CSE)</span>
+            <br />
+            <span>Amitesh Agrawal (2nd year CSE)</span>
+          </div>
+          <div class="column">
+            NIT Raipur, GE Road, Raipur, Chhatissgarh (492007)
+          </div>
+          <div class="column has-text-right">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.5489569646056!2d81.60284041448581!3d21.249727185574887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dde213f66723%3A0x21543965c50c43c7!2sNational%20Institute%20of%20Technology%2C%20Raipur!5e0!3m2!1sen!2sin!4v1612431218471!5m2!1sen!2sin"
+              width="500"
+              height="300"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="styles/jquery-3.5.1.js"></script>
+    <script>
+      function toasterOptions() {
+        toastr.options = {
+          closeButton: false,
+          debug: false,
+          newestOnTop: false,
+          progressBar: false,
+          positionClass: "toast-top-center",
+          preventDuplicates: true,
+          onclick: null,
+          showDuration: "100",
+          hideDuration: "1000",
+          timeOut: "2000",
+          extendedTimeOut: "1000",
+          showEasing: "swing",
+          hideEasing: "linear",
+          showMethod: "show",
+          hideMethod: "hide",
+        };
+      }
+      toasterOptions();
+      const ts = [
+        {
+          1: "9AM - 10AM",
+          2: "10AM - 11AM",
+          3: "11AM - 12PM",
+          4: "12PM - 1PM",
+          5: "1PM - 2PM",
+          6: "2PM - 3PM",
+          7: "3PM - 4PM",
+          8: "4PM - 5PM",
+          9: "5PM - 6PM",
+          10: "6PM - 7PM",
+          11: "7PM - 8PM",
+          12: "8PM - 9PM",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Display file name when select file
+        let fileInputs = document.querySelectorAll(".file.has-name");
+        for (let fileInput of fileInputs) {
+          let input = fileInput.querySelector(".file-input");
+          let name = fileInput.querySelector(".file-name");
+          input.addEventListener("change", () => {
+            let files = input.files;
+            if (files.length === 0) {
+              name.innerText = "No file selected";
+            } else {
+              name.innerText = files[0].name;
+            }
+          });
+        }
+
+        // 2. Remove file name when form reset
+        let forms = document.getElementsByTagName("form");
+        for (let form of forms) {
+          form.addEventListener("reset", () => {
+            console.log("a");
+            let names = form.querySelectorAll(".file-name");
+            for (let name of names) {
+              name.innerText = "No file selected";
+            }
+          });
+        }
+      });
+
+      var userList;
+      var host = "localhost:5500";
+      console.log(typeof document.cookie);
+      var name = getCookie("username");
+      console.log(name);
+      document.getElementById("user_name").innerHTML = name;
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(";");
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      const webcamElement = document.getElementById("webcam");
+      const canvasElement = document.getElementById("canvas");
+      const snapSoundElement = document.getElementById("snapSound");
+      const webcam = new Webcam(
+        webcamElement,
+        "user",
+        canvasElement,
+        snapSoundElement
+      );
+      function startWebcam() {
+        webcam
+          .start()
+          .then((result) => {
+            console.log("webcam started");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+      function takeSnap() {
+        let picture = webcam.snap();
+        document.querySelector("#download-photo").href = picture;
+      }
+      function flipCamera() {
+        $("#cameraFlip").click(function () {
+          webcam.flip();
+          webcam.start();
+        });
+      }
+
+      function stopWebcam() {
+        webcam.stop();
+      }
+      function isCanvasBlank(canvas) {
+        return !canvas
+          .getContext("2d")
+          .getImageData(0, 0, canvas.width, canvas.height)
+          .data.some((channel) => channel !== 0);
+      }
+
+      $(document).ready(function () {
+        function getvalues() {
+          var urlToHit =
+          "http://52.188.174.118/api/core/";
+            /*"https://cors-anywhere.herokuapp.com/http://20.198.3.123/api/core/"*/
+          var request = new XMLHttpRequest();
+          var token = localStorage.getItem(name);
+          console.log(token);
+          request.open("GET", urlToHit, true);
+          request.setRequestHeader("Content-type", "application/json");
+          request.setRequestHeader("Authorization", token);
+          request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+              var response = request.responseText;
+              console.log(typeof response);
+              var obj = JSON.parse(response);
+              console.log(typeof obj);
+              console.log(obj.vaccines_available);
+              console.log(obj.price);
+              console.log(obj.is_available);
+              document.getElementById("vaccinesLeft").innerHTML =
+                obj.vaccines_available;
+              document.getElementById("priceOfVaccine").innerHTML = obj.price;
+              document.getElementById("availabilityStatus").innerHTML =
+                (obj.is_available ? "Available" : "Not Available");
+            }
+          };
+          request.send();
+        }
+        getvalues();
+
+        function loadUsers() {
+          var urlToHit =
+            "http://52.188.174.118/api/core/list/";
+          var request = new XMLHttpRequest();
+          var token = localStorage.getItem(name);
+          request.open("GET", urlToHit, true);
+          request.setRequestHeader("Content-type", "application/json");
+          request.setRequestHeader("Authorization", token);
+          request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+              //console.log(typeof(request));
+              var response = request.responseText;
+              var i,
+                x = "";
+              userList = JSON.parse(response);
+              for (i = 0; i < userList.length; i++) {
+                var time = ts[0][userList[i].timeslot];
+
+                x +=
+                  "<tr><td>" +
+                  userList[i].patient_id +
+                  "</td><td>" +
+                  userList[i].patient +
+                  "</td><td>" +
+                  time +
+                  "</td></tr>";
+              }
+              document.getElementById("getList").innerHTML = x;
+            }
+          };
+          request.send();
+        }
+
+        loadUsers();
+      });
+
+      var urlToHit =
+        "http://52.188.174.118/api/core/check/";
+
+      const handleImageUpload = (event) => {
+        const files = event.target.files;
+        const formData = new FormData();
+        var id = userList[0].patient_id;
+        var token = localStorage.getItem(name);
+        formData.append("clicked_photo", files[0]);
+        formData.append("patient_id", id);
+        console.log(files[0]);
+        console.log(id);
+        fetch(urlToHit, {
+          method: "POST",
+          headers: {
+            Authorization: token,
+          },
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            var ans = json.message;
+            if (ans) {
+              toastr.info("Face matched");
+            } else {
+              toastr.error("Unable to match face");
+            }
+          })
+          .catch((error) => {
+            toastr.error("Face not found");
+          });
+      };
+
+      console.log("submit started");
+
+      function submitDetails() {
+        if (document.getElementById("fileUpload").value == "") {
+          toastr.info("Please select an image first!");
+          console.log("no files selected");
+        } else {
+          const files = document.querySelector("[type=file]").files;
+          var file = files[0];
+          const formData = new FormData();
+          if (userList.length > 0) {
+            var id = userList[0].patient_id;
+            var token = localStorage.getItem(name);
+            formData.append("clicked_photo", file);
+            formData.append("patient_id", id);
+            console.log(file);
+            console.log(id);
+            fetch(urlToHit, {
+              method: "POST",
+              headers: {
+                Authorization: token,
+              },
+              body: formData,
+            })
+              .then((response) => response.json())
+              .then((json) => {
+                console.log(json);
+                if (json.message == true) {
+                  toastr.success("Face matched");
+                } else {
+                  toastr.error("Unable to match face");
+                }
+              })
+              .catch((error) => {
+                toastr.error("Face not detected");
+              });
+          } else {
+            toastr.error("User List is empty");
+          }
+        }
+      }
+
+      function isVaccinated() {
+        var host =
+          "http://cors-anywhere.herokuapp.com/http://52.188.174.118/api/users/vacc/login/";
+        var id = $("textarea").val();
+        console.log(userList);
+        console.log({ id });
+        host = host + id + "/";
+        var token = localStorage.getItem(name);
+        console.log(host);
+        fetch(host, {
+          method: "GET",
+          headers: {
+            Authorization: token,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            toastr.success("Successfully Vaccinated !");
+          })
+          .catch((error) => {
+            toastr.error("User does not exists or already vaccinated!");
+          });
+        loadUsers();
+      }
+
+      function logout() {
+        console.log(name);
+        localStorage.removeItem(name);
+        window.location = "http://" + host + "/";
+      }
+    </script>
+  </body>
+</html>

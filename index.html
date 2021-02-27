@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <!--<link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body{
+        font-family: 'PT Sans';
+      }
+    </style>
+    <script src="https://use.fontawesome.com/36f44874b6.js"></script>
+    <script>
+      var exists = localStorage.length;
+      if (exists > 0) {
+        var host = "localhost:5500";
+        window.location.href = "http://" + host + "/dashboard.html";
+      }
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <!-- <div id="preloader">
+        <div id="status">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>-->
+
+    <nav
+      class="navbar is-fixed-top signal-navbar"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="">
+            <img class="signal-logo" src="assets/logo/Sanjeevani/1.png" />
+          </a>
+            <img class="signal-logo" src="assets/logo/Sanjeevani/3.png" />
+          <a>
+          </a>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item"> Home </a>
+            <a class="navbar-item" href="#whyus"> Why Sanjeevani? </a>
+            <a class="navbar-item" href="#features"> Features </a>
+
+            <a class="navbar-item"> Get Sanjeevani </a>
+
+            <div class="navbar-item">
+              <div class="buttons">
+                <!--<a class="button is-primary" href="login1.html"> Log in </a>-->
+                <button
+                  class="button is-primary"
+                  onclick="window.location.href='login1.html'"
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero-main hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div
+              class="column is-two-fifths"
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-duration="800"
+            >
+              <h1>Transform the world!</h1>
+              <p class="body1 mt-4">
+                Welcome to the new experience of blood services, Sanjeevani makes it easy
+                to book your nearest blood center!
+              </p>
+              <p>
+                <br />
+                <button class="button button-white">
+                  <a class="no-underline" href="/download/">
+                    Get Sanjeevani
+                  </a>
+                </button>
+              </p>
+            </div>
+            <div class="column mobile-screenshots" data-aos="zoom-in">
+              <img class="screenshot1" src="assets/screenshots/1.png" />
+              <img class="screenshot2" src="assets/screenshots/2.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="whyus" class="why-signal section">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h2>Why use Sanjeevani?</h2>
+            <p class="body1">
+              Explore below to see why Sanjeevani is your all in one Blood Services app!
+            </p>  
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section features">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <div class="box" data-aos="fade-right" data-aos-duration="1000">
+              <img src="assets/img/undraw_medicine_b1ol.svg" />
+              <h3>Find best blood centres near you!</h3>
+              <p class="body2 mt-4">
+                Worried about where to go? Sanjeevani got you covered, reach out to
+                nearest doctors in need!
+              </p>
+            </div>
+          </div>
+          <div class="column is-half has-text-centered">
+            <div class="box" data-aos="fade-left" data-aos-duration="1000">
+              <img
+                src="assets/img/undraw_Mobile_application_mr4r.svg"
+              />
+              <br />
+              <br />
+              <br />
+
+              <h3>Apply from home!</h3>
+
+              <p class="body2 mt-4">
+                Now blood transfusion process made easy with Sanjeevani, you can apply from
+                home just by filling your basic details, an adhaar card and a
+                profile picture.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <div class="box" data-aos="fade-right" data-aos-duration="1000">
+              <img
+                src="assets/img/undraw_social_distancing_2g0u.svg"
+              />
+              <h3>Find about latest blood drives in your nearest areas at the earliest!</h3>
+              <p class="body2 mt-4">
+                Get notifications on app about any blood drives in your area with the all the details!
+              </p>
+            </div>
+          </div>
+          <div class="column is-half has-text-centered">
+            <div class="box" data-aos="fade-left" data-aos-duration="1000">
+              <img
+                src="assets/img/undraw_two_factor_authentication_namy.svg"
+              />
+              <br />
+              <br />
+              <br />
+              <br />
+
+              <h3>Secure and Fast</h3>
+              <p class="body2 mt-4">
+                At Sanjeevani your personal details remains safe and is shared between
+                the center assigned to you, with just a face scan at the
+                center to start receiving treatment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="section information">
+      <div class="container">
+        <div class="columns is-desktop" data-aos="zoom-out" data-aos-duration="1000">
+          <div class="column">
+            <img src="assets/img/undraw_security_o890.svg" />
+          </div>
+          <div class="column is-one-third">
+            <h2>Secure. Safe. Fast.</h2>
+            <p class="body1">
+              All your information at Sanjeevani consisting of adhaar card and selfies
+              are kept secure using https protocol. We believe in security of
+              every individual on the app.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section information">
+      <div class="container">
+        <div class="columns is-desktop" data-aos="zoom-out" data-aos-duration="1000">
+          <div class="column is-hidden-desktop">
+            <img
+              src="assets/img/undraw_Around_the_world_re_n353.svg"
+            />
+          </div>
+          <div class="column is-one-third">
+            <h2>Free for Everyone</h2>
+            <p class="body1">
+              Sanjeevani is free for everyone! We believe that medical facilities
+              should be availabe to every individual in the hour of need. We
+              want to contribute to process of successful and fast blood related services
+              for the country in these Covid times! <br />
+              <br />
+            </p>
+          </div>
+          <div class="column is-hidden-touch has-text-right">
+            <img
+              src="assets/img/undraw_Around_the_world_re_n353.svg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-two-fifths is-hidden-mobile">
+            <span class="copyright"> © 2021 Team NEXA </span>
+            <br />
+            <br />
+            <br />
+
+            <span>Team Members: </span>
+            <br />
+            <span>Sahil Silare (2nd year CSE)</span>
+            <br />
+            <span>Prakhar Asaiya (2nd year CSE)</span>
+            <br />
+            <span>Siddharth Mishra (2nd year CSE)</span>
+            <br />
+            <span>Amitesh Agrawal (2nd year CSE)</span>
+          </div>
+          <div class="column">
+            NIT Raipur, GE Road, Raipur, Chhatissgarh (492007)
+          </div>
+          <div class="column has-text-right">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.5489569646056!2d81.60284041448581!3d21.249727185574887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dde213f66723%3A0x21543965c50c43c7!2sNational%20Institute%20of%20Technology%2C%20Raipur!5e0!3m2!1sen!2sin!4v1612431218471!5m2!1sen!2sin"
+              width="500"
+              height="300"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="styles/jquery-3.5.1.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: "aos-init", // class applied after initialization
+        animatedClassName: "aos-animate", // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: "ease", // default easing for AOS animations
+        once: true, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+      });
+    </script>
+    <script>
+      $(window).on("load", function () {
+        $("#preloader").fadeOut();
+        $("#status").delay(350).fadeOut();
+      });
+      $(document).ready(function () {
+        var previousScroll = 0;
+        $(window).scroll(function () {
+          var currentScroll = $(this).scrollTop();
+          if (currentScroll < 100) {
+            showTopNav();
+          } else if (
+            currentScroll > 0 &&
+            currentScroll < $(document).height() - $(window).height()
+          ) {
+            if (currentScroll > previousScroll) {
+              hideNav();
+            } else {
+              showNav();
+            }
+            previousScroll = currentScroll;
+          }
+        });
+
+        function hideNav() {
+          $(".navbar").addClass("is-invisible");
+        }
+
+        function showNav() {
+          $(".navbar").removeClass("is-invisible");
+        }
+      });
+    </script>
+    <script src="styles/app.js"></script>
+  </body>
+</html>
