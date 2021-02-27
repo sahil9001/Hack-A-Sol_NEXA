@@ -17,7 +17,7 @@ Here is **Team NEXA** with -
 
 **_A complete solution with a personalised app and admin portal, with a special social distancing monitor and KYC verification model, which will make the process convenient, effective and hassle free._**
 
-### **Features of VaxU** - _Artificial Intelligence & Machine Learning Models_
+### **Features of Sanjeevani** - _Artificial Intelligence & Machine Learning Models_
 
 1. AI - Adhaar Card Details Validation
    - In this model we are validating every information given in the aadhaar card with the details filed by the patient in the application form .
@@ -28,7 +28,7 @@ Here is **Team NEXA** with -
    - In this model we are validating that the person who filed the form is the same person getting the at the center.
    - To achieve this we are taking a picture of the person while filing the application form and validating the image with the person's face who came at the hospital for blood transfusion, we are using face_recognititon library in order to get perfect accuracy.
 
-### **Features of VaxU** - _Web_
+### **Features of Sanjeevani** - _Web_
 
 1. FrontEnd :
    - The website facilitates only admin portal, It is not for patients or general public.
@@ -42,7 +42,7 @@ Here is **Team NEXA** with -
    - Two different profiles for patients and authenticated officials are present
    - Time slots are assigned to every patient according to availability, locality and age i.e. people at high risk are given priority.
 
-### **Features of VaxU** - _Mobile Application_
+### **Features of Sanjeevani** - _Mobile Application_
 
 - Statistics of total cases, death, recovery etc. due to COVID19 can be viewed at the **Home Screen**
 - Local Information related to COVID19 can be viewed at the **City** tab
