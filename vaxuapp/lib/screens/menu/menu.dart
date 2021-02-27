@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:vaxuapp/screens/menu/tabs/check/audiorecord.dart';
 import 'package:vaxuapp/screens/menu/tabs/city/details_screen.dart';
 import 'package:vaxuapp/screens/menu/tabs/statistics/home_screen.dart';
 import 'package:vaxuapp/screens/menu/tabs/hospitals/hospital_screen.dart';
@@ -21,20 +20,13 @@ class _MenuScreenState extends State<MenuScreen> {
       case 0:
         child = HomeScreen();
         break;
-
       case 1:
         child = DetailsScreen();
         break;
-
       case 2:
         child = HospitalScreen();
         break;
-
       case 3:
-        child = SoundScreen();
-        break;
-
-      case 4:
         child = ProfileScreen();
         break;
     }
@@ -62,10 +54,6 @@ class _MenuScreenState extends State<MenuScreen> {
         new BottomNavigationBarItem(
           icon: Icon(Icons.local_hospital),
           label: "Hospitals",
-        ),
-        new BottomNavigationBarItem(
-          icon: Icon(Icons.coronavirus),
-          label: "Check",
         ),
         new BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
       ],
