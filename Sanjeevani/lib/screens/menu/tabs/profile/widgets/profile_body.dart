@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vaxuapp/screens/apply_for_transfusion/apply_for_transfusion.dart';
 import 'package:vaxuapp/screens/help_center/help_screen.dart';
-import 'package:vaxuapp/screens/apply_for_vaccination/apply_for_vaccination.dart';
 import 'package:vaxuapp/screens/profile_detail/profile_details_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -38,11 +38,11 @@ class _BodyState extends State<Body> {
                         builder: (BuildContext context) => ProfileDetailsScreen()))
                   }),
           ProfileMenu(
-              text: "Apply for Vaccination",
+              text: "Apply for Transfusion",
               icon: Icon(Icons.local_hospital),
               press: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (BuildContext context) => VaccinationApply()));
+                    .push(MaterialPageRoute(builder: (BuildContext context) => TransfusionApply()));
               }),
           ProfileMenu(
               text: "Help Center",
