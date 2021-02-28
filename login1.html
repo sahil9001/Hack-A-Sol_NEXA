@@ -87,33 +87,13 @@
         };
       }
       toasterOptions();
-      var host = "localhost:5500";
+      var host = "https://hard-coder05.github.io/Hack-A-Sol_NEXA/";
       function trylogin() {
         var _token;
         var userName = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        // var data = {
-        //     email: userName,
-        //     password: password,
-        //   };
         var urlToHit =
           "http://cors-anywhere.herokuapp.com/http://52.188.174.118/api/users/vacc/login/";
-          // fetch(urlToHit, {
-          //   method: "POST",
-          //   headers: {
-          //     'Content-type': 'application/json;charset=utf-8'
-          //   },
-          //   body: JSON.stringify(data)
-          // })
-          // .then(res => res.json())
-          // .then(data => {
-          //   var key = data.key;
-          //   localStorage.setItem(userName, key);
-          //   success(userName);
-          // })
-          // .catch(err => {
-          //   toastr.error("Wrong Credentials");
-          // });
         var request = new XMLHttpRequest();
 
         function getToken(urlToHit, email, password) {
@@ -121,7 +101,7 @@
           request.open("POST", urlToHit, true);
           request.setRequestHeader("Content-type", "application/json");
           request.onreadystatechange = function () {
-            if (request.readyState == 4 && request.status == 200) {
+            if (request.readyState == 4 && request.status == 202) {
               var response = request.responseText;
               var obj = JSON.parse(response);
               console.log(obj);

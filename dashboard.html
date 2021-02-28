@@ -31,8 +31,7 @@
       var exists = localStorage.length;
       if (!exists) {
         alert("You need to login first!");
-        // Hard-Coder05.github.io/NEXA-VaxU
-        var host = "localhost:5500";
+        var host = "https://hard-coder05.github.io/Hack-A-Sol_NEXA/";
         window.location.href = "http://" + host;
       }
     </script>
@@ -285,8 +284,6 @@
 
             <span>Team Members: </span>
             <br />
-            <span>Sahil Silare (2nd year CSE)</span>
-            <br />
             <span>Prakhar Asaiya (2nd year CSE)</span>
             <br />
             <span>Siddharth Mishra (2nd year CSE)</span>
@@ -380,7 +377,7 @@
       });
 
       var userList;
-      var host = "localhost:5500";
+      var host = "https://hard-coder05.github.io/Hack-A-Sol_NEXA/";
       console.log(typeof document.cookie);
       var name = getCookie("username");
       console.log(name);
@@ -443,8 +440,7 @@
       $(document).ready(function () {
         function getvalues() {
           var urlToHit =
-          "http://52.188.174.118/api/core/";
-            /*"https://cors-anywhere.herokuapp.com/http://20.198.3.123/api/core/"*/
+            "http://cors-anywhere.herokuapp.com/http://52.188.174.118/api/users/vacc/login/";
           var request = new XMLHttpRequest();
           var token = localStorage.getItem(name);
           console.log(token);
@@ -464,7 +460,7 @@
                 obj.vaccines_available;
               document.getElementById("priceOfVaccine").innerHTML = obj.price;
               document.getElementById("availabilityStatus").innerHTML =
-                (obj.is_available ? "Available" : "Not Available");
+                obj.is_available;
             }
           };
           request.send();
@@ -473,7 +469,7 @@
 
         function loadUsers() {
           var urlToHit =
-            "http://52.188.174.118/api/core/list/";
+            "http://cors-anywhere.herokuapp.com/http://52.188.174.118/api/core/users/list/";
           var request = new XMLHttpRequest();
           var token = localStorage.getItem(name);
           request.open("GET", urlToHit, true);
@@ -508,7 +504,7 @@
       });
 
       var urlToHit =
-        "http://52.188.174.118/api/core/check/";
+        "http://cors-anywhere.herokuapp.com/http://52.188.174.118/api/core/check/";
 
       const handleImageUpload = (event) => {
         const files = event.target.files;
@@ -584,7 +580,7 @@
 
       function isVaccinated() {
         var host =
-          "http://cors-anywhere.herokuapp.com/http://52.188.174.118/api/users/vacc/login/";
+          "https://cors-anywhere.herokuapp.com/http://20.198.3.123/api/core/vaccinated/";
         var id = $("textarea").val();
         console.log(userList);
         console.log({ id });
@@ -599,7 +595,7 @@
         })
           .then((res) => res.json())
           .then((data) => {
-            toastr.success("Successfully Vaccinated !");
+            toastr.success("Successfully Accepted!");
           })
           .catch((error) => {
             toastr.error("User does not exists or already vaccinated!");

@@ -89,6 +89,15 @@ Here is **Team NEXA** with -
 
   This project can be extended to facilitate vaccinations for any other future pandemics or diseases.
 
+### How to Run
+
+1. App:
+   - The APK is there on our github. You can install it on your device.
+2. Web:
+   - Our Web is hosted on https://hard-coder05.github.io/Hack-A-Sol_NEXA/
+   - Username : user@example.com
+   - Password : abcd1234
+
 ## Team Members - Domains
 
 All the team members are from National Institute of Technology pursuing Computer Science and Engineering in the 2nd Year.
