@@ -32,7 +32,7 @@
       if (!exists) {
         alert("You need to login first!");
         var host = "https://hard-coder05.github.io/Hack-A-Sol_NEXA/";
-        window.location.href = "http://" + host;
+        window.location.href = host + "index.html";
       }
     </script>
   </head>
@@ -606,7 +606,7 @@
       function logout() {
         console.log(name);
         localStorage.removeItem(name);
-        window.location = "http://" + host + "/";
+        window.location =  host ;
       }
     </script>
   </body>
